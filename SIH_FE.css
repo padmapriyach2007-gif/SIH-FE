@@ -209,6 +209,37 @@ nav {
     object-fit: cover;
 }
 /* =========================================================
+   WIRE SELECTION & HIGHLIGHT STYLES
+   ========================================================= */
+
+.wire-container {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.wire-container:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Highlighted Active Wire Line */
+.wire-container.selected-wire {
+    background: rgba(6, 182, 212, 0.06);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+}
+
+.wire-container.selected-wire .qubit-label {
+    color: #ffffff;
+    font-weight: 700;
+}
+/* =========================================================
    BUTTON SUITE
    ========================================================= */
 
@@ -1416,4 +1447,117 @@ nav {
 #btn-close-sim:hover, .btn-close-sim-grad:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+}
+/* Quick Prompt Chips in Studio Sidebar */
+.tutor-chips-container {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 0.6rem 0;
+}
+
+.tutor-chip {
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    color: var(--accent-cyan);
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.725rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tutor-chip:hover {
+    background: rgba(6, 182, 212, 0.2);
+    border-color: var(--accent-cyan);
+    transform: translateY(-1px);
+}
+/* =========================================================
+   STACKED INPUT LAYOUT (PROMPT BOX ABOVE, BUTTONS BELOW)
+   ========================================================= */
+
+.tutor-stacked-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.full-width-input {
+    width: 100% !important;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.full-width-input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+.tutor-form-buttons-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.tutor-form-buttons-row .tutor-send-btn,
+.tutor-form-buttons-row .tutor-clear-btn {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+/* =========================================================
+   STACKED INPUT LAYOUT (PROMPT BOX ABOVE, BUTTONS BELOW)
+   ========================================================= */
+
+.tutor-stacked-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.full-width-input {
+    width: 100% !important;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.full-width-input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+.tutor-form-buttons-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.tutor-form-buttons-row .tutor-send-btn,
+.tutor-form-buttons-row .tutor-clear-btn {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
 }
