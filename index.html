@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neural Nomads - Quantum Intelligence Platform</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Main CSS -->
     <link rel="stylesheet" href="SIH_FE.css">
 </head>
 <body>
 
-    <!-- Top Navigation -->
     <header>
         <div class="logo-container">
             <div class="logo-icon">
@@ -26,7 +23,6 @@
             </div>
         </div>
 
-        <!-- Navigation -->
         <nav aria-label="Main Navigation">
             <button type="button" class="nav-btn active" id="btn-dashboard">Dashboard</button>
             <button type="button" class="nav-btn" id="btn-explainer">Quantum Intro</button>
@@ -34,7 +30,6 @@
             <button type="button" class="nav-btn" id="btn-aitutor">AI Tutor</button>
         </nav>
 
-        <!-- User Profile -->
         <div class="user-profile" id="user-profile-container">
             <span id="user-display-name">Guest</span>
             <div class="avatar" id="user-avatar">
@@ -44,7 +39,6 @@
         </div>
     </header>
 
-    <!-- Login Modal -->
     <div class="modal-overlay" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" aria-hidden="true">
         <div class="modal-card">
             <button type="button" class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
@@ -69,9 +63,7 @@
         </div>
     </div>
 
-    <!-- Dashboard View -->
     <main id="dashboard-view" class="view-content active">
-        <!-- Welcome Section -->
         <div class="dashboard-welcome">
             <div>
                 <span class="section-title">Quantum Intelligence Platform</span>
@@ -81,7 +73,6 @@
             <button type="button" class="action-btn dashboard-welcome-btn" id="action-quick-studio">Open Circuit Studio &rarr;</button>
         </div>
 
-        <!-- Dashboard Statistics -->
         <div class="dashboard-stats">
             <div class="stat-card">
                 <span class="stat-label">Lessons Completed</span>
@@ -108,9 +99,7 @@
             </div>
         </div>
 
-        <!-- Dashboard Main Cards -->
         <div class="dashboard-main-cards">
-            <!-- Learning Card -->
             <div class="dash-card learning">
                 <div>
                     <span class="section-title">Theory Module</span>
@@ -130,7 +119,6 @@
                 <button type="button" class="action-btn" id="action-start-learning">Start Learning &rarr;</button>
             </div>
 
-            <!-- Simulator Card -->
             <div class="dash-card simulator">
                 <div>
                     <span class="section-title">Execution Sandbox</span>
@@ -156,9 +144,7 @@
             </div>
         </div>
 
-        <!-- Dashboard Bottom -->
         <div class="dashboard-bottom">
-            <!-- Recent Activity -->
             <div class="dashboard-panel recent-activity">
                 <div class="panel-header">
                     <div>
@@ -197,7 +183,6 @@
                 </div>
             </div>
 
-            <!-- Quick Access Shortcuts -->
             <div class="dashboard-panel quick-access">
                 <div class="panel-header">
                     <div>
@@ -231,7 +216,6 @@
         </div>
     </main>
 
-    <!-- Quantum Explainer View -->
     <div id="explainer-view" class="view-content">
         <div class="explainer-container">
             <div class="explainer-hero">
@@ -241,14 +225,12 @@
             </div>
 
             <div class="explainer-grid">
-                <!-- Bits vs Qubits -->
                 <div class="explainer-card">
                     <div class="card-icon">⚡</div>
                     <h3>Bits vs. Qubits</h3>
                     <p>Classical computers use <strong>bits</strong> as the basic unit of information, strictly existing as a <code>0</code> or <code>1</code>. Quantum computers use <strong>qubits</strong>, which leverage physical particles like photons or electrons.</p>
                 </div>
 
-                <!-- Superposition -->
                 <div class="explainer-card">
                     <div class="card-icon">🌀</div>
                     <h3>Superposition</h3>
@@ -256,14 +238,12 @@
                     <div class="formula-box">$$\psi = \alpha|0\rangle + \beta|1\rangle$$</div>
                 </div>
 
-                <!-- Entanglement -->
                 <div class="explainer-card">
                     <div class="card-icon">🔗</div>
                     <h3>Quantum Entanglement</h3>
                     <p>When qubits become entangled, the quantum state of one instantly dictates the state of another—even across vast distances. Einstein famously called this <em>"spooky action at a distance."</em></p>
                 </div>
 
-                <!-- Interference -->
                 <div class="explainer-card">
                     <div class="card-icon">🎯</div>
                     <h3>Quantum Interference</h3>
@@ -271,7 +251,6 @@
                 </div>
             </div>
 
-            <!-- Explainer Banner -->
             <div class="explainer-banner">
                 <div class="banner-text">
                     <h2>Ready to build your first Quantum Circuit?</h2>
@@ -286,16 +265,13 @@
         </div>
     </div>
 
-    <!-- Circuit Studio View -->
     <div id="studio-view" class="view-content">
-        <!-- Left Sidebar -->
         <aside class="sidebar-left">
             <div class="sidebar-header">
                 <span class="section-title">Component Library</span>
                 <p class="sidebar-subtitle">Click or drag gates to add to the canvas</p>
             </div>
 
-            <!-- Gate Library -->
             <div class="gate-grid" id="gate-library">
                 <div class="gate-card" draggable="true" data-gate="H">
                     <div class="gate-badge">H</div>
@@ -324,7 +300,6 @@
             </div>
         </aside>
 
-        <!-- Main Workspace -->
         <section class="workspace">
             <div class="canvas-container">
                 <div class="canvas-header">
@@ -341,13 +316,10 @@
                     </div>
                 </div>
 
-                <!-- Circuit Wires Container -->
                 <div class="circuit-wires-list" id="circuit-wires-list">
-                    <!-- Dynamic circuit wires rendered via JavaScript -->
-                </div>
+                    </div>
             </div>
 
-            <!-- Qiskit Code Editor -->
             <div class="code-editor">
                 <div class="code-editor-header">
                     <span># Live Generated Qiskit Code</span>
@@ -357,40 +329,47 @@
             </div>
         </section>
 
-        <!-- Right Sidebar AI Circuit Tutor -->
         <aside class="sidebar-right assistant-sidebar">
             <div class="ai-assistant assistant-panel">
                 <span class="assistant-section-title">AI Circuit Tutor</span>
                 <p class="sidebar-subtitle">Real-time quantum circuit design assistant</p>
 
-                <!-- Quick Prompt Chips -->
                 <div class="tutor-chips-container">
                     <button type="button" class="tutor-chip" data-prompt="How to create a Bell State?">✨ Bell State</button>
                     <button type="button" class="tutor-chip" data-prompt="What does Hadamard gate do?">🌀 Superposition</button>
                     <button type="button" class="tutor-chip" data-prompt="How to optimize circuit depth?">⚡ Optimize</button>
                 </div>
                 
-                <!-- Live Chat Messages Window -->
                 <div class="assistant-chat-messages" id="studio-chat-messages">
-                    <div class="chat-message ai">
-                        <div class="message-avatar">🤖</div>
-                        <div class="message-bubble">
-                            <strong style="color: var(--accent-cyan);">Quantum Circuit Tutor:</strong>
-                            <p id="studio-live-analysis">Drag gates onto the wires above to build circuits. I will analyze your setup in real-time!</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Interactive Studio Form (Input Above, Buttons Below) -->
-<form id="studio-chat-form" class="tutor-stacked-input-container">
-    <input type="text" class="full-width-input" id="studio-chat-input" placeholder="Ask about this circuit layout..." aria-label="Ask AI Tutor" required>
-    
-    <div class="tutor-form-buttons-row">
-        <button type="submit" class="tutor-send-btn">Send</button>
-        <button type="button" class="tutor-clear-btn" id="btn-clear-studio-chat" aria-label="Clear Studio Chat">Clear</button>
+    <div class="studio-tutor-welcome">
+        <div class="studio-tutor-avatar">🤖</div>
+
+        <div class="studio-tutor-content">
+            <div class="studio-tutor-name">
+                Quantum Circuit Tutor
+            </div>
+
+            <p id="studio-live-analysis">
+                Drag gates onto the wires above to build circuits.
+                I will analyze your setup in real-time!
+            </p>
+        </div>
     </div>
-</form>
-    <!-- AI Tutor View -->
+
+</div>
+
+                <form id="studio-chat-form" class="tutor-stacked-input-container">
+                    <input type="text" class="full-width-input" id="studio-chat-input" placeholder="Ask about this circuit layout..." aria-label="Ask AI Tutor" required>
+                    
+                    <div class="tutor-form-buttons-row">
+                        <button type="submit" class="tutor-send-btn">Send</button>
+                        <button type="button" class="tutor-clear-btn" id="btn-clear-studio-chat" aria-label="Clear Studio Chat">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </aside> </div>
+
     <div id="aitutor-view" class="view-content">
         <div class="tutor-container">
             <div class="tutor-header">
@@ -416,9 +395,8 @@
                 </form>
             </div>
         </div>
-    </div> <!-- Close aitutor-view -->
+    </div>
 
-    <!-- Quantum Simulation Results Modal -->
     <div class="sim-results-modal" id="sim-modal" role="dialog" aria-modal="true" aria-labelledby="simulation-title" hidden>
         <div class="sim-results-card">
             <div class="sim-results-header">
@@ -427,19 +405,15 @@
             </div>
             <p class="sim-meta-info" id="sim-meta-text">Backend: Qiskit Aer Simulator | Execution Time: 14ms</p>
 
-            <!-- Probability Distribution -->
             <div class="prob-distribution" id="prob-distribution-list">
-                <!-- Dynamically populated probability bars -->
-            </div>
+                </div>
 
             <button type="button" class="btn-close-sim-grad" id="btn-close-sim">Close Results</button>
         </div>
     </div>
 
-    <!-- MathJax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Main JavaScript -->
     <script src="SIH_FE.js"></script>
 </body>
 </html>
