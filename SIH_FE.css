@@ -1561,3 +1561,302 @@ nav {
     font-weight: 600;
     border-radius: 8px;
 }
+.chat-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  background: #111422;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 16px 20px;
+  background: #161b2e;
+  border-bottom: 1px solid #1e293b;
+}
+
+.chat-header h2 {
+  font-size: 18px;
+  color: #00d2ff;
+}
+
+.chat-header p {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bot-message {
+  background: #1e293b;
+  color: #e2e8f0;
+  align-self: flex-start;
+}
+
+.user-message {
+  background: #2563eb;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+/* Input Bar */
+.chat-input-area {
+  display: flex;
+  padding: 16px;
+  background: #161b2e;
+  border-top: 1px solid #1e293b;
+  gap: 10px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  background: #0b0d17;
+  border: 1px solid #334155;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+}
+
+.chat-input-area input:focus {
+  border-color: #00d2ff;
+}
+
+.chat-input-area button {
+  background: #00d2ff;
+  color: #0b0d17;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chat-input-area button:hover {
+  background: #38bdf8;
+}
+/* =========================================================
+   AI CIRCUIT TUTOR - PROFESSIONAL STYLING
+   ========================================================= */
+
+.assistant-sidebar {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.assistant-sidebar .ai-assistant {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.assistant-sidebar .assistant-chat-messages {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Tutor Welcome Message */
+.studio-tutor-welcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px;
+    border-radius: 14px;
+
+    background: rgba(5, 8, 15, 0.95);
+    border: 1px solid rgba(0, 220, 255, 0.12);
+
+    overflow: hidden;
+}
+
+/* Robot Icon */
+.studio-tutor-avatar {
+    flex: 0 0 32px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    border-radius: 10px;
+
+    background: rgba(0, 220, 255, 0.08);
+    border: 1px solid rgba(0, 220, 255, 0.18);
+}
+
+/* Message Content */
+.studio-tutor-content {
+    min-width: 0;
+    flex: 1;
+}
+
+/* Tutor Name */
+.studio-tutor-name {
+    margin-bottom: 10px;
+
+    color: var(--accent-cyan, #00d9ff);
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+/* Live Analysis Text */
+#studio-live-analysis {
+    margin: 0;
+
+    color: #aab7c9;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Highlighted quantum state */
+.quantum-state {
+    display: inline-block;
+
+    margin: 0 2px;
+    padding: 1px 6px;
+
+    border-radius: 5px;
+
+    color: var(--accent-cyan, #00d9ff);
+    background: rgba(0, 220, 255, 0.08);
+
+    font-family: "Fira Code", monospace;
+    font-weight: 600;
+}
+
+/* AI Message inside Studio */
+.assistant-sidebar .chat-message {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+.assistant-sidebar .message-bubble {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.assistant-sidebar .message-bubble p,
+.assistant-sidebar .message-bubble strong {
+    overflow-wrap: anywhere;
+}
+
+/* User/AI chat text */
+.assistant-sidebar .message-bubble code {
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Tutor Chips */
+.assistant-sidebar .tutor-chip {
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.assistant-sidebar .tutor-chip:hover {
+    transform: translateY(-1px);
+}
+
+/* Input Area */
+.assistant-sidebar .tutor-stacked-input-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.assistant-sidebar .full-width-input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Send / Clear Buttons */
+.assistant-sidebar .tutor-form-buttons-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.assistant-sidebar .tutor-send-btn,
+.assistant-sidebar .tutor-clear-btn {
+    min-width: 0;
+    flex: 1;
+}
+
+/* Scrollbar */
+.assistant-sidebar .assistant-chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.assistant-sidebar .assistant-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.assistant-sidebar .assistant-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(150, 170, 190, 0.25);
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .studio-tutor-welcome {
+        padding: 12px;
+    }
+
+    .studio-tutor-name {
+        font-size: 15px;
+    }
+
+    #studio-live-analysis {
+        font-size: 13px;
+    }
+}
