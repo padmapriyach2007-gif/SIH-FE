@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Nomads - Quantum Intelligence Platform</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="SIH_FE.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="./NN LOGO.png" alt="Neural Nomads Logo" class="logo-img">
+            </div>
+            <div class="logo-text">
+                NEURAL NOMADS | QUANTUM STUDIO
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav aria-label="Main Navigation">
+            <button type="button" class="nav-btn active" id="btn-dashboard">Dashboard</button>
+            <button type="button" class="nav-btn" id="btn-explainer">Quantum Intro</button>
+            <button type="button" class="nav-btn" id="btn-studio">Circuit Studio</button>
+            <button type="button" class="nav-btn" id="btn-aitutor">AI Tutor</button>
+        </nav>
+
+        <!-- User Profile -->
+        <div class="user-profile" id="user-profile-container">
+            <span id="user-display-name">Guest</span>
+            <div class="avatar" id="user-avatar">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/022/014/184/small/user-icon-member-login-isolated-vector.jpg" class="circular-photo" alt="User Avatar">
+            </div>
+            <button type="button" class="auth-btn" id="btn-auth-action">Login</button>
+        </div>
+    </header>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" aria-hidden="true">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <h2 class="modal-title" id="modal-title-text">Sign In</h2>
+            <p class="modal-subtitle">Access your Quantum Studio workspace</p>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" maxlength="16" minlength="3" pattern="^[a-zA-Z0-9_-]+$" autocomplete="username" spellcheck="false" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+                </div>
+
+                <div class="auth-error" id="auth-error" aria-live="polite">Invalid username or password.</div>
+
+                <button type="submit" class="action-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard View -->
+    <main id="dashboard-view" class="view-content active">
+        <!-- Welcome Section -->
+        <div class="dashboard-welcome">
+            <div>
+                <span class="section-title">Quantum Intelligence Platform</span>
+                <h1>Welcome, <span id="dashboard-user-name">Guest</span></h1>
+                <p>Explore quantum computing, learn core physics concepts, build circuits, and experiment with quantum algorithms.</p>
+            </div>
+            <button type="button" class="action-btn dashboard-welcome-btn" id="action-quick-studio">Open Circuit Studio &rarr;</button>
+        </div>
+
+        <!-- Dashboard Statistics -->
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-label">Lessons Completed</span>
+                <strong class="stat-value" id="lessons-completed">12</strong>
+                <span class="stat-description">Keep learning</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Learning Progress</span>
+                <strong class="stat-value" id="learning-percentage">75%</strong>
+                <span class="stat-description">Overall progress</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Circuits Created</span>
+                <strong class="stat-value" id="dash-gates-count">8</strong>
+                <span class="stat-description">Quantum experiments</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">AI Sessions</span>
+                <strong class="stat-value" id="ai-sessions">15</strong>
+                <span class="stat-description">Tutor interactions</span>
+            </div>
+        </div>
+
+        <!-- Dashboard Main Cards -->
+        <div class="dashboard-main-cards">
+            <!-- Learning Card -->
+            <div class="dash-card learning">
+                <div>
+                    <span class="section-title">Theory Module</span>
+                    <h2>Learning Pathways</h2>
+                    <p>Interactive self-paced guides covering quantum mechanics, superposition, entanglement, and real-world applications.</p>
+
+                    <div class="learning-progress">
+                        <div class="progress-header">
+                            <span>Your Learning Progress</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="action-btn" id="action-start-learning">Start Learning &rarr;</button>
+            </div>
+
+            <!-- Simulator Card -->
+            <div class="dash-card simulator">
+                <div>
+                    <span class="section-title">Execution Sandbox</span>
+                    <h2>Quantum Simulator</h2>
+                    <p>Build, visualize, and execute quantum algorithms on local simulators using our drag-and-drop circuit interface.</p>
+
+                    <div class="simulator-info">
+                        <div class="simulator-item">
+                            <span>Qubits</span>
+                            <strong id="dash-qubits-count">2</strong>
+                        </div>
+                        <div class="simulator-item">
+                            <span>Gates</span>
+                            <strong id="dash-gates-total">6</strong>
+                        </div>
+                        <div class="simulator-item">
+                            <span>Status</span>
+                            <strong class="status-ready">Ready</strong>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="action-btn action-pink" id="action-launch-studio">Launch Studio &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Dashboard Bottom -->
+        <div class="dashboard-bottom">
+            <!-- Recent Activity -->
+            <div class="dashboard-panel recent-activity">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-title">Your Workspace</span>
+                        <h2>Recent Activity</h2>
+                    </div>
+                </div>
+
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">&check;</div>
+                        <div class="activity-content">
+                            <strong>Qubit Fundamentals</strong>
+                            <span>Lesson completed</span>
+                        </div>
+                        <span class="activity-time">Today</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">&check;</div>
+                        <div class="activity-content">
+                            <strong>Hadamard Gate</strong>
+                            <span>Practice completed</span>
+                        </div>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">&rarr;</div>
+                        <div class="activity-content">
+                            <strong>Quantum Entanglement</strong>
+                            <span>Currently learning</span>
+                        </div>
+                        <span class="activity-time">In progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Shortcuts -->
+            <div class="dashboard-panel quick-access">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-title">Shortcuts</span>
+                        <h2>Quick Access</h2>
+                    </div>
+                </div>
+
+                <div class="quick-access-grid">
+                    <button type="button" class="quick-access-btn" id="quick-learning">
+                        <span aria-hidden="true">📚</span>
+                        <strong>Learn Quantum</strong>
+                    </button>
+
+                    <button type="button" class="quick-access-btn" id="quick-circuit">
+                        <span aria-hidden="true">⚛</span>
+                        <strong>Build Circuit</strong>
+                    </button>
+
+                    <button type="button" class="quick-access-btn" id="quick-aitutor">
+                        <span aria-hidden="true">🤖</span>
+                        <strong>Ask AI Tutor</strong>
+                    </button>
+
+                    <button type="button" class="quick-access-btn" id="quick-progress">
+                        <span aria-hidden="true">📊</span>
+                        <strong>My Progress</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quantum Explainer View -->
+    <div id="explainer-view" class="view-content">
+        <div class="explainer-container">
+            <div class="explainer-hero">
+                <span class="section-title">Fundamentals &amp; Science</span>
+                <h1>Understanding Quantum Technology</h1>
+                <p>Quantum computing harnesses counter-intuitive phenomena of subatomic physics to process complex data exponentially faster than classical supercomputers.</p>
+            </div>
+
+            <div class="explainer-grid">
+                <!-- Bits vs Qubits -->
+                <div class="explainer-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Bits vs. Qubits</h3>
+                    <p>Classical computers use <strong>bits</strong> as the basic unit of information, strictly existing as a <code>0</code> or <code>1</code>. Quantum computers use <strong>qubits</strong>, which leverage physical particles like photons or electrons.</p>
+                </div>
+
+                <!-- Superposition -->
+                <div class="explainer-card">
+                    <div class="card-icon">🌀</div>
+                    <h3>Superposition</h3>
+                    <p>Superposition allows a qubit to exist in a linear combination of states (both $|0\rangle$ and $|1\rangle$) simultaneously. It enables quantum machines to evaluate millions of possibilities at once.</p>
+                    <div class="formula-box">$$\psi = \alpha|0\rangle + \beta|1\rangle$$</div>
+                </div>
+
+                <!-- Entanglement -->
+                <div class="explainer-card">
+                    <div class="card-icon">🔗</div>
+                    <h3>Quantum Entanglement</h3>
+                    <p>When qubits become entangled, the quantum state of one instantly dictates the state of another—even across vast distances. Einstein famously called this <em>"spooky action at a distance."</em></p>
+                </div>
+
+                <!-- Interference -->
+                <div class="explainer-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Quantum Interference</h3>
+                    <p>Quantum algorithms exploit wave-like interference to amplify correct paths to solutions while canceling out incorrect paths, dramatically narrowing down complex solutions.</p>
+                </div>
+            </div>
+
+            <!-- Explainer Banner -->
+            <div class="explainer-banner">
+                <div class="banner-text">
+                    <h2>Ready to build your first Quantum Circuit?</h2>
+                    <p>Apply these fundamentals inside our visual circuit composer or chat with the AI Tutor for guided exercises.</p>
+                </div>
+
+                <div class="banner-actions">
+                    <button type="button" class="action-btn action-pink" id="explainer-to-studio">Open Circuit Studio &rarr;</button>
+                    <button type="button" class="action-btn" id="explainer-to-ai">Ask AI Tutor &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Circuit Studio View -->
+    <div id="studio-view" class="view-content">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="sidebar-header">
+                <span class="section-title">Component Library</span>
+                <p class="sidebar-subtitle">Click or drag gates to add to the canvas</p>
+            </div>
+
+            <!-- Gate Library -->
+            <div class="gate-grid" id="gate-library">
+                <div class="gate-card" draggable="true" data-gate="H">
+                    <div class="gate-badge">H</div>
+                    <div class="gate-info"><strong>Hadamard</strong><span>Creates Superposition</span></div>
+                </div>
+                <div class="gate-card" draggable="true" data-gate="X">
+                    <div class="gate-badge">X</div>
+                    <div class="gate-info"><strong>Pauli-X</strong><span>Bit Flip (NOT Gate)</span></div>
+                </div>
+                <div class="gate-card" draggable="true" data-gate="Y">
+                    <div class="gate-badge">Y</div>
+                    <div class="gate-info"><strong>Pauli-Y</strong><span>Bit &amp; Phase Flip</span></div>
+                </div>
+                <div class="gate-card" draggable="true" data-gate="Z">
+                    <div class="gate-badge">Z</div>
+                    <div class="gate-info"><strong>Pauli-Z</strong><span>Phase Flip</span></div>
+                </div>
+                <div class="gate-card" draggable="true" data-gate="CX">
+                    <div class="gate-badge gate-cyan">CX</div>
+                    <div class="gate-info"><strong>CNOT</strong><span>Entangles 2 Qubits</span></div>
+                </div>
+                <div class="gate-card" draggable="true" data-gate="M">
+                    <div class="gate-badge gate-pink">M</div>
+                    <div class="gate-info"><strong>Measure</strong><span>Collapses to Bit</span></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <section class="workspace">
+            <div class="canvas-container">
+                <div class="canvas-header">
+                    <div>
+                        <span class="section-title">Quantum Circuit Canvas</span>
+                        <p class="canvas-subtitle">Drop gates on wire lines to design quantum algorithms</p>
+                    </div>
+
+                    <div class="canvas-actions">
+                        <button type="button" class="btn-canvas-action" id="btn-add-wire">+ Add Wire</button>
+                        <button type="button" class="btn-canvas-action btn-danger" id="btn-clear-canvas">Clear</button>
+                        <button type="button" class="action-btn action-pink btn-sm" id="btn-run-simulation">Run Simulation ▶</button>
+                    </div>
+                </div>
+
+                <!-- Circuit Wires Container -->
+                <div class="circuit-wires-list" id="circuit-wires-list">
+                    <!-- Dynamic circuit wires rendered via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Qiskit Code Editor -->
+            <div class="code-editor">
+                <div class="code-editor-header">
+                    <span># Live Generated Qiskit Code</span>
+                    <button type="button" class="btn-copy-code" id="btn-copy-qiskit">Copy Code</button>
+                </div>
+                <pre><code id="qiskit-code-display">from qiskit import QuantumCircuit\nqc = QuantumCircuit(2)</code></pre>
+            </div>
+        </section>
+
+        <!-- Right Sidebar AI Assistant -->
+        <aside class="sidebar-right assistant-sidebar">
+            <div class="ai-assistant assistant-panel">
+                <span class="assistant-section-title">AI Learning Assistant</span>
+                
+                <div class="assistant-chat-messages" id="studio-chat-messages">
+                    <div class="message bot">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <strong>Quantum Tutor:</strong>
+                            <p>Drag gates onto the wires above to build circuits. I will analyze your setup in real-time!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="assistant-input-container">
+                    <input type="text" class="assistant-chat-input" id="studio-chat-input" placeholder="Ask about this circuit layout..." aria-label="Ask AI Tutor">
+                </div>
+            </div>
+        </aside>
+    </div> <!-- Close studio-view -->
+
+    <!-- AI Tutor View -->
+    <div id="aitutor-view" class="view-content">
+        <div class="tutor-container">
+            <div class="tutor-header">
+                <span class="tutor-section-title">RAG-Powered Intelligence</span>
+                <h2>Quantum AI Assistant Workspace</h2>
+                <p>Get real-time answers, explanations of mathematical concepts, and circuit optimization advice.</p>
+            </div>
+
+            <div class="tutor-chat-box">
+                <div class="tutor-chat-messages" id="tutor-chat-messages">
+                    <div class="chat-message ai">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-bubble">
+                            <p>Welcome to your dedicated AI Assistant session. Ask me anything about qubits, gates, or algorithms!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="chat-form" class="tutor-input-container">
+                    <input type="text" class="tutor-chat-input" id="tutor-chat-input" placeholder="Ask a question about quantum mechanics or circuit logic..." aria-label="Quantum Question Input" required>
+                    <button type="submit" class="tutor-send-btn" id="tutor-send-btn">Send</button>
+                    <button type="button" class="tutor-clear-btn" id="btn-clear-chat" aria-label="Clear Chat History">Clear Chat</button>
+                </form>
+            </div>
+        </div>
+    </div> <!-- Close aitutor-view -->
+
+    <!-- Quantum Simulation Results Modal -->
+    <div class="sim-results-modal" id="sim-modal" role="dialog" aria-modal="true" aria-labelledby="simulation-title" hidden>
+        <div class="sim-results-card">
+            <div class="sim-results-header">
+                <h3 id="simulation-title" class="sim-modal-title">Quantum Statevector Results</h3>
+                <span class="sim-status-badge">Completed (1024 Shots)</span>
+            </div>
+            <p class="sim-meta-info" id="sim-meta-text">Backend: Qiskit Aer Simulator | Execution Time: 14ms</p>
+
+            <!-- Probability Distribution -->
+            <div class="prob-distribution" id="prob-distribution-list">
+                <!-- Dynamically populated probability bars -->
+            </div>
+
+            <button type="button" class="btn-close-sim-grad" id="btn-close-sim">Close Results</button>
+        </div>
+    </div>
+
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="SIH_FE.js"></script>
+</body>
+</html>
